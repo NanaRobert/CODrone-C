@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center"> 🛸 Beyond Clean Data: An Open, Comprehensive Benchmark for Robustness Evaluation in UAV-Oriented Object Detection</h1>
+  <h1 align="center"> 🌧️🎯 Beyond Clean Data: An Open, Comprehensive Benchmark for Robustness Evaluation in UAV-Oriented Object Detection</h1>
   <p align="center">
     <strong>Ao Gong</strong> · <strong>Chenlin Fu</strong> · <strong>Hao Yu</strong> · <strong>Yingying Zhu</strong>
   </p>
@@ -22,7 +22,6 @@ Robust evaluation of UAV-oriented object detection (UAV-OOD) should go beyond cl
 
 <div align="center">
   <img src="figs/pipeline.png" width="900" alt="CODrone-C Construction Pipeline"/>
-  <p><em>We systematically construct our decoupled diagnostic framework upon high-resolution clean UAV imagery, strictly calibrated by our Scene-Adaptive Modulation Protocol to ensure physical plausibility across day and night conditions.</em></p>
 </div>
 
 ---
@@ -31,7 +30,7 @@ Robust evaluation of UAV-oriented object detection (UAV-OOD) should go beyond cl
 
 ### 📥 Dataset Downloads
 
-> **⚠️ Notice:** Due to the massive scale of the benchmark, some corruption subsets of CODrone-C are currently syncing to our cloud servers. However, the core foundational subsets (including `CODrone-C-L`, `Real-Adv135`, and representative corruptions from the full suite) are fully available for immediate download and review. The links below are permanent and will automatically reflect the latest uploads.
+> **⚠️ Notice:** Due to the massive scale of the benchmark, some corruption subsets of CODrone-C are currently syncing to our cloud servers. The links below are permanent and will automatically reflect the latest uploads.
 
 * **Google Drive:**  [Click Here to Access](https://drive.google.com/drive/folders/1r-fv2tbjeJhyVO8VOUyqgoN_DX7p1jhm?usp=sharing)
 * **Baidu Netdisk:**  [Click Here to Access](https://pan.baidu.com/s/13lJYwz2tFu7dXIij1wpgQQ?pwd=jum6) (jum6)
@@ -40,23 +39,20 @@ Robust evaluation of UAV-oriented object detection (UAV-OOD) should go beyond cl
 
 Our project provides a complete ecosystem for UAV-OOD robustness evaluation, tailored for diverse diagnostic needs:
 
-### 1. CODrone-C (Exhaustive Diagnosis Variant)
+### CODrone-C
 The full variant encompasses **17 decoupled hazard types** (Weather, Blur, Noise, Digital) across **5 severity levels**. It is designed for deep, fine-grained vulnerability profiling, allowing researchers to pinpoint the exact physical weaknesses of their network architectures.
 
-### 2. CODrone-C-L (Lightweight Proxy Variant)
+### CODrone-C-L
 A rigorously quantified, sub-sampled version of the full benchmark. It drastically reduces evaluation overhead while strictly maintaining the performance ranking and diagnostic trends of the full dataset, making it ideal for rapid, iterative model screening during the training phase.
 
-### 3. Real-Adv135 (Authentic Evaluation Subset)
+### Real-Adv135
 To strictly validate the transferability of our synthetic stress tests, we curated and manually re-annotated 135 severely degraded real-world images (sourced from DroneVehicle, HazyDet, VisDrone, and UAVDT). All instances were meticulously re-annotated with precise Rotated Bounding Boxes (RBox).
 
 <div align="center">
   <img src="figs/real_adv.png" width="900" alt="Real-Adv135 Annotation Comparison"/>
-  <p><em>Qualitative comparison demonstrating our precise manual RBox annotations (right) effectively rescuing targets missed or poorly enclosed by original coarse horizontal boxes (left) under extreme real-world degradations.</em></p>
 </div>
 
 ### 📂 Directory Structure
-
-Once fully downloaded, the dataset follows this organization:
 
 ```shell
 CODrone-C_Benchmark/
@@ -79,22 +75,17 @@ CODrone-C_Benchmark/
 ```
 
 ### 📊 Comprehensive Benchmarking Results
-Extensive evaluations of 9 state-of-the-art UAV-OOD models on our benchmark suite reveal that superior clean-domain accuracy does not naturally guarantee resilience against physical hazards.
-
 <div align="center">
   <img src="figs/main_results.png" width="900" alt="Main Benchmark Results"/>
   <img src="figs/rce_heatmap.png" width="900" alt="RCE Curves and Vulnerability Heatmap"/>
-  <p><em>Overall performance drops and specific architectural vulnerability profiles across 17 decoupled corruptions.</em></p>
 </div>
 
 ### 👁️ Qualitative Visualizations of Diagnostic Stress
-Our 17 decoupled corruptions are designed as orthogonal diagnostic stress tests. They do not merely degrade the image; they systematically attack specific structural components of the detectors.
-
 <div align="center">
   <img src="figs/vis.png" width="900" alt="17 Corruptions Visualized"/>
 </div>
 
 ### 📄 Supplementary Material
-Due to the strict page limit of the ACM MM Dataset Track, all detailed hyperparameter settings, Scene-Adaptive Modulation parameters, complete AP75 evaluation tables, and Corruption-Augmented Training (CAT) results are provided in our technical whitepaper.
+Due to the page limit of the ACM MM Dataset Track, all detailed hyperparameter settings, Scene-Adaptive Modulation parameters, complete AP75 evaluation tables, and Corruption-Augmented Training (CAT) results are provided in our Appendix.
 
-👉 **[Click here to view the Supplementary Material PDF](./Appendix.pdf)**
+👉 **[Click here to view the Supplementary Material](./Appendix.pdf)**
