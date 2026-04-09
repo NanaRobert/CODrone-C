@@ -33,8 +33,8 @@ Robust evaluation of UAV-oriented object detection (UAV-OOD) should go beyond cl
 
 > **⚠️ Notice:** Due to the massive scale of the benchmark, some corruption subsets of CODrone-C are currently syncing to our cloud servers. However, the core foundational subsets (including `CODrone-C-L`, `Real-Adv135`, and representative corruptions from the full suite) are fully available for immediate download and review. The links below are permanent and will automatically reflect the latest uploads.
 
-* **Google Drive (Recommended):** [Click Here to Access](https://drive.google.com/drive/folders/1r-fv2tbjeJhyVO8VOUyqgoN_DX7p1jhm?usp=sharing)
-* **Baidu Netdisk (Alternative):** [Click Here to Access](https://pan.baidu.com/s/13lJYwz2tFu7dXIij1wpgQQ?pwd=jum6) (Access Code: `jum6`)
+* **Google Drive:**  [Click Here to Access](https://drive.google.com/drive/folders/1r-fv2tbjeJhyVO8VOUyqgoN_DX7p1jhm?usp=sharing)
+* **Baidu Netdisk:**  [Click Here to Access](https://pan.baidu.com/s/13lJYwz2tFu7dXIij1wpgQQ?pwd=jum6) (jum6)
 
 ---
 
@@ -60,24 +60,22 @@ Once fully downloaded, the dataset follows this organization:
 
 ```shell
 CODrone-C_Benchmark/
-├── CODrone-C/               # Full diagnostic variant (17 corruptions x 5 levels)
-│   ├── compression/         # Corruptions
-|      ├── 1/                # Severities
-|      ├── 2/
-|      ├── 3/
-|      ├── 4/
-|      ├── 5/
+├── CODrone-C/               # Full diagnostic variant (17 corruptions × 5 severity levels)
+│   ├── compression/         # Specific corruption types
+│   │   ├── 1/               # Severity levels (1 to 5)
+│   │   ├── 2/
+│   │   ├── 3/
+│   │   ├── 4/
+│   │   └── 5/
 │   ├── condensation/
 │   ├── contrast/
-│   ├── defocus/
-│   ├── ...
-│   ├── vibration/
+│   ├── ...                  # (Remaining 14 corruption categories)
 │   └── zoom/
 ├── CODrone-C-L/             # Lightweight proxy variant
 ├── Real-Adv135/             # Real-world adverse evaluation subset
-|   ├── imgs/
-│   └── anns/
-└── annotations/             # RBox annotations for CODrone-C and CODrone-C-L
+│   ├── imgs/                # 135 severely degraded real-world images
+│   └── anns/                # Manually re-annotated precision RBox labels
+└── annotations/             # Original RBox TXT annotations for CODrone-C & CODrone-C-L
 ```
 
 ### 📊 Comprehensive Benchmarking Results
