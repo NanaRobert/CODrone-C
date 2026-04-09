@@ -40,13 +40,13 @@ Robust evaluation of UAV-oriented object detection (UAV-OOD) should go beyond cl
 Our project provides a complete ecosystem for UAV-OOD robustness evaluation, tailored for diverse diagnostic needs:
 
 ### CODrone-C
-The full variant encompasses **17 decoupled hazard types** (Weather, Blur, Noise, Digital) across **5 severity levels**. It is designed for deep, fine-grained vulnerability profiling, allowing researchers to pinpoint the exact physical weaknesses of their network architectures.
+The full variant encompasses **17 decoupled corruption types** across **5 severity levels**. It is designed for exhaustive vulnerability diagnosis, allowing researchers to isolate and pinpoint the specific architectural vulnerabilities of their detectors.
 
 ### CODrone-C-L
-A rigorously quantified, sub-sampled version of the full benchmark. It drastically reduces evaluation overhead while strictly maintaining the performance ranking and diagnostic trends of the full dataset, making it ideal for rapid, iterative model screening during the training phase.
+A rigorously quantified lightweight proxy of the full benchmark. It drastically reduces evaluation overhead while strictly preserving the performance ranking and diagnostic trends, serving as an efficient tool for rapid, holistic robustness screening.
 
 ### Real-Adv135
-To strictly validate the transferability of our synthetic stress tests, we curated and manually re-annotated 135 severely degraded real-world images (sourced from DroneVehicle, HazyDet, VisDrone, and UAVDT). All instances were meticulously re-annotated with precise Rotated Bounding Boxes (RBox).
+To strictly validate the diagnostic fidelity of our synthetic stress tests, we curated 135 severely degraded real-world images sourced from four established UAV datasets. All instances were meticulously re-annotated with precise rotated bounding box annotations.
 
 <div align="center">
   <img src="figs/real_adv.png" width="900" alt="Real-Adv135 Annotation Comparison"/>
